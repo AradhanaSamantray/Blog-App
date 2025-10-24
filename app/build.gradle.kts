@@ -37,8 +37,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+        }
     }
 }
 
@@ -58,12 +60,19 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.google.firebase.analytics.ktx)
     implementation(libs.firebase.database.ktx)
-
+    implementation(libs.firebase.auth.v2231)
+    implementation(libs.firebase.database.v2030)
     // Google Sign-In
     implementation(libs.play.services.auth)
 
+    //Cloudinary Storage
+    implementation(libs.cloudinary.android.v1300)
+    implementation(libs.cloudinary.cloudinary.android)
+
     // Glide (image loading)
     implementation(libs.github.glide.v4160)
+    implementation(libs.okhttp)
+    implementation(libs.okio)
 
     // Testing
     testImplementation(libs.junit)
