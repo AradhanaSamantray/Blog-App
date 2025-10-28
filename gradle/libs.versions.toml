@@ -40,6 +40,7 @@ playServicesAuth = "21.4.0"
 playServicesAuthVersion = "20.8.0"
 firebaseDatabase = "22.0.1"
 firebaseStorage = "22.0.1"
+recyclerview = "1.4.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -87,6 +88,7 @@ play-services-auth = { module = "com.google.android.gms:play-services-auth", ver
 play-services-auth-v2080 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.delay
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,4 +24,5 @@ class SplashActivity : AppCompatActivity() {
             finish()
         },5000)
     }
+
 }

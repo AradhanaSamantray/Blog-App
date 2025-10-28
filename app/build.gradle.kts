@@ -73,6 +73,7 @@ dependencies {
     implementation(libs.github.glide.v4160)
     implementation(libs.okhttp)
     implementation(libs.okio)
+    implementation(libs.androidx.recyclerview)
 
     // Testing
     testImplementation(libs.junit)
