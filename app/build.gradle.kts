@@ -74,6 +74,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.okio)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.activity)
 
     // Testing
     testImplementation(libs.junit)
