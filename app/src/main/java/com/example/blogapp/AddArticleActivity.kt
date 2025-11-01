@@ -27,8 +27,8 @@ class AddArticleActivity : AppCompatActivity() {
         ActivityAddArticleBinding.inflate(layoutInflater)
     }
 
-    private val databaseReference: DatabaseReference= FirebaseDatabase.getInstance("https://aradhanablogapp-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("blogs")
-    private val userReference: DatabaseReference= FirebaseDatabase.getInstance("https://aradhanablogapp-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("users")
+    private val databaseReference: DatabaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("blogs")
+    private val userReference: DatabaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("users")
     private val auth= FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,12 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:elevation="5dp"
     android:background="@color/light_white"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_height="0dp"
+        android:layout_width="0dp"
         android:alpha="0.1"
         android:background="@color/light_white"
         android:scaleType="centerCrop"
@@ -57,10 +59,11 @@
 
     <ImageButton
         android:id="@+id/save_article_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="40dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Save article"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
@@ -93,6 +96,7 @@
         android:id="@+id/floatingAddArticleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="Add Article"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:borderWidth="2dp"

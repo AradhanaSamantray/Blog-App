@@ -21,10 +21,12 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="24dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Go Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stroke_1" />
@@ -73,7 +75,8 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/blogTitle"
-        tools:layout_editor_absoluteX="32dp" />
+        tools:layout_editor_absoluteX="32dp"
+        app:layout_constraintStart_toStartOf="@+id/blogTitle"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/blogDescription"
@@ -106,6 +109,7 @@
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/blue"
         android:text="Add Blog "
+        android:contentDescription="Add Blog Button"
         app:cornerRadius="9dp"
         app:layout_constraintEnd_toEndOf="@+id/blogDescription"
         app:layout_constraintStart_toStartOf="@+id/blogDescription"

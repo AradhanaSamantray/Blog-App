@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
         //Initializations
         auth= FirebaseAuth.getInstance()
-        databaseReference= FirebaseDatabase.getInstance("https://aradhanablogapp-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("blogs")
+        databaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("blogs")
         //finduser id
         val userId:String?=auth.currentUser?.uid
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadUserProfileImage(userId: String) {
-        val userReference= FirebaseDatabase.getInstance("https://aradhanablogapp-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("users").child(userId)
+        val userReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("users").child(userId)
 
         userReference.child("profileImage").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="264dp"
     android:layout_marginTop="17dp"
-    app:cardCornerRadius="9dp">
+    app:cardCornerRadius="9dp"
+    android:elevation="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,10 +22,9 @@
             android:maxLines="2"
             android:text="Please Start Writing Better Git commits."
             android:textColor="@color/blue"
-            android:textSize="16Ssp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintTop_toTopof="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
@@ -35,8 +35,8 @@
             app:layout_constraintBottom_toBottomOf="@id/userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/userName"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_contraintTop_toTopOf="@id/userName">
+            app:layout_constraintTop_toTopOf="parent" >
+
 
             <ImageView
                 android:id="@+id/profile"
@@ -113,7 +113,6 @@
             android:layout_marginTop="3dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/blue"
-
             android:text="Read more"
             app:cornerRadius="9dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -136,21 +135,23 @@
 
         <ImageButton
             android:id="@+id/likeButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
+            android:contentDescription="Like"
             app:layout_constraintBottom_toBottomOf="@+id/likeCount"
             app:layout_constraintStart_toEndOf="@+id/likeCount"
             app:layout_constraintTop_toTopOf="@+id/likeCount"
-            app:srcCompat="@drawable/black_heart" />
-
+            app:srcCompat="@drawable/black_heart"
+            />
         <ImageButton
             android:id="@+id/postSaveButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
+            android:contentDescription="Save"
             app:layout_constraintBottom_toBottomOf="@+id/likeButton"
             app:layout_constraintStart_toEndOf="@+id/likeButton"
             app:layout_constraintTop_toTopOf="@+id/likeButton"
