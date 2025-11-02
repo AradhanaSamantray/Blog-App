@@ -42,34 +42,9 @@ class MainActivity : AppCompatActivity() {
         databaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("blogs")
         //finduser id
         val userId:String?=auth.currentUser?.uid
-
-        if(userId!=null){
-            loadUserProfileImage(userId)
-        }
-
      binding.floatingAddArticleButton.setOnClickListener{
          startActivity(Intent(this,AddArticleActivity::class.java))
          finish()
      }
-    }
-
-    private fun loadUserProfileImage(userId: String) {
-        val userReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("users").child(userId)
-
-        userReference.child("profileImage").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val profileImageUrl:Any?=snapshot.getValue(String::class.java)
-                if(profileImageUrl!=null){
-                    Glide.with(this@MainActivity)
-                        .load(profileImageUrl)
-                        .into(binding.profileImage)
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-              Toast.makeText(this@MainActivity,"Error loading profile image ",Toast.LENGTH_SHORT).show()
-            }
-
-        })
     }
 }
