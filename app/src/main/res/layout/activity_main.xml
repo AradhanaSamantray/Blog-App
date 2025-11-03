@@ -82,7 +82,10 @@
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/blogRecyclerView"
+        tools:listitem="@layout/blog_item"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
@@ -90,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="@+id/search_blog"
         app:layout_constraintStart_toStartOf="@+id/search_blog"
         app:layout_constraintTop_toBottomOf="@+id/search_blog"
-        tools:listitem="@layout/blog_item" />
+         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingAddArticleButton"

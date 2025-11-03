@@ -9,8 +9,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.blogapp.Model.BlogItemModel
+import com.example.blogapp.adapter.BlogAdapter
 import com.example.blogapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -47,6 +50,30 @@ class MainActivity : AppCompatActivity() {
             loadUserProfileImage(userId)
         }
 
+        val recyclerView:RecyclerView=binding.blogRecyclerView
+        val blogAdapter= BlogAdapter(blogItems)
+        recyclerView.adapter=blogAdapter
+        recyclerView.layoutManager=LinearLayoutManager(this)
+
+     //fetch data from firebase database
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                blogItems.clear()
+                for (snapshot: DataSnapshot in snapshot.children){
+                val blogItem: BlogItemModel? = snapshot.getValue(BlogItemModel::class.java)
+                if (blogItem != null) {
+                    blogItems.add(blogItem)
+                }
+            }
+            //notify the adapter that the data has changed
+            blogAdapter.notifyDataSetChanged()
+        }
+
+
+            override fun onCancelled(error: DatabaseError) {
+             Toast.makeText(this@MainActivity,"Blog loading field",Toast.LENGTH_SHORT).show()
+            }
+        })
      binding.floatingAddArticleButton.setOnClickListener{
          startActivity(Intent(this,AddArticleActivity::class.java))
          finish()
