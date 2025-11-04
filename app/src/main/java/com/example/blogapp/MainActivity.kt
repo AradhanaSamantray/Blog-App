@@ -46,10 +46,6 @@ class MainActivity : AppCompatActivity() {
         //finduser id
         val userId:String?=auth.currentUser?.uid
 
-        if(userId!=null){
-            loadUserProfileImage(userId)
-        }
-
         val recyclerView:RecyclerView=binding.blogRecyclerView
         val blogAdapter= BlogAdapter(blogItems)
         recyclerView.adapter=blogAdapter
@@ -65,6 +61,8 @@ class MainActivity : AppCompatActivity() {
                     blogItems.add(blogItem)
                 }
             }
+                //reverse the list
+                blogItems.reverse()
             //notify the adapter that the data has changed
             blogAdapter.notifyDataSetChanged()
         }
