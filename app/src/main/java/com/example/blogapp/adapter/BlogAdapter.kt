@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class BlogAdapter (private val items:List<BlogItemModel>)
+class BlogAdapter (private val items:MutableList<BlogItemModel>)
     :RecyclerView.Adapter<BlogAdapter.BlogViewHolder>(){
 
         private val databaseReference:DatabaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference
@@ -94,6 +94,7 @@ class BlogAdapter (private val items:List<BlogItemModel>)
                 override fun onDataChange(snapshot: DataSnapshot) {
                    if(snapshot.exists())
                    {
+                       //if blog already saved
                        binding.postSaveButton.setImageResource(R.drawable.red_saved_articles)
                    }else
                    {
@@ -222,6 +223,11 @@ class BlogAdapter (private val items:List<BlogItemModel>)
             }
         })
 
+    }
+    fun updateData(savedBlogsArticles: List<BlogItemModel>) {
+        items.clear()
+        items.addAll(savedBlogsArticles)
+        notifyDataSetChanged()
     }
 
 }

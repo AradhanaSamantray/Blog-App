@@ -23,10 +23,10 @@ class AddArticleActivity : AppCompatActivity() {
     }
 
     private val databaseReference: DatabaseReference =
-        FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app")
+        FirebaseDatabase.getInstance("https://blog-app-401c7-default-rtdb.asia-southeast1.firebasedatabase.app")
             .getReference("blogs")
     private val userReference: DatabaseReference =
-        FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app")
+        FirebaseDatabase.getInstance("https://blog-app-401c7-default-rtdb.asia-southeast1.firebasedatabase.app")
             .getReference("users")
     private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +72,7 @@ class AddArticleActivity : AppCompatActivity() {
                                     userImageUrlFromDB
                                 )
 
-                                //create uniquekey for blog post
+                                //create unique key for blog post
                                 val key: String? = databaseReference.push().key
                                 if (key != null) {
                                     blogItem.postId = key

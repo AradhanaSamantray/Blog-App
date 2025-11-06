@@ -40,9 +40,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //To go save article page
+        binding.saveArticleButton.setOnClickListener {
+            startActivity(Intent(this, SavedArticlesActivity::class.java))
+        }
+
         //Initializations
         auth= FirebaseAuth.getInstance()
-        databaseReference= FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("blogs")
+        databaseReference= FirebaseDatabase.getInstance("https://blog-app-401c7-default-rtdb.asia-southeast1.firebasedatabase.app").reference.child("blogs")
         //finduser id
         val userId:String?=auth.currentUser?.uid
 

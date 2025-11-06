@@ -18,6 +18,7 @@ firebaseBomVersion = "33.3.0"
 firebaseDatabaseVersion = "20.3.0"
 githubGlide = "4.16.0"
 glide = "5.0.5"
+googleServices = "4.4.4"
 kotlin = "2.0.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -69,6 +70,7 @@ github-glide-v4160 = { module = "com.github.bumptech.glide:glide", version.ref =
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 google-firebase-auth = { module = "com.google.firebase:firebase-auth" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

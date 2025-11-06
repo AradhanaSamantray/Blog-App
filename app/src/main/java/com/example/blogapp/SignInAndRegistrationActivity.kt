@@ -41,13 +41,13 @@ class SignInAndRegistrationActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         database =
-            FirebaseDatabase.getInstance("https://blog-app-3e6e0-default-rtdb.asia-southeast1.firebasedatabase.app")
+            FirebaseDatabase.getInstance("https://blog-app-401c7-default-rtdb.asia-southeast1.firebasedatabase.app")
 
         // Configure Cloudinary
         val config = mutableMapOf<String, String>()
-        config["cloud_name"] = "dc2wycsfb"
-        config["api_key"] = "756633542912518"
-        config["api_secret"] = "yhDPSVOxbXIPL56FOpZZa4z327w"
+        config["cloud_name"] = "dk6gwkjsz"
+        config["api_key"] = "419153567688271"
+        config["api_secret"] = "FkncajbIbmIjeWtc2LwWqLnWmkA"
         cloudinary = Cloudinary(config)
 
         val action = intent.getStringExtra("action")
