@@ -95,10 +95,10 @@ class BlogAdapter (private val items:MutableList<BlogItemModel>)
                    if(snapshot.exists())
                    {
                        //if blog already saved
-                       binding.postSaveButton.setImageResource(R.drawable.red_saved_articles)
+                       binding.postSaveButton.setImageResource(R.drawable.red_bookmark)
                    }else
                    {
-                       binding.postSaveButton.setImageResource(R.drawable.red_bookmark)
+                       binding.postSaveButton.setImageResource(R.drawable.red_saved_articles)
                    }
                 }
 

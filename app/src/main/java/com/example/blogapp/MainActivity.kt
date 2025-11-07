@@ -45,6 +45,14 @@ class MainActivity : AppCompatActivity() {
         binding.saveArticleButton.setOnClickListener {
             startActivity(Intent(this, SavedArticlesActivity::class.java))
         }
+        //To go profile Activity
+        binding.profileImage.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+        //To go profile Activity
+        binding.cardView2.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
 
         //Initializations
         auth= FirebaseAuth.getInstance()
