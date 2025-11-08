@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="264dp"
+    android:layout_marginStart="5dp"
     android:layout_marginTop="17dp"
-    app:cardCornerRadius="9dp"
-    android:elevation="5dp">
+    android:layout_marginEnd="5dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="9dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +37,7 @@
             app:layout_constraintBottom_toBottomOf="@id/userName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/userName"
-            app:layout_constraintTop_toTopOf="parent" >
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <ImageView
@@ -98,8 +100,7 @@
             android:letterSpacing="0.03"
             android:lineHeight="22sp"
             android:maxLines="4"
-            android:text="I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad.
-   "
+            android:text="I recently read a helpful article on Hashnode by Simon Egersand titled Write Git Commit Messages Your Colleagues Will Love, and it inspired me to dive a little deeper into understanding what makes a Git commit good or bad."
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/divider"
             app:layout_constraintHorizontal_bias="1.0"
@@ -108,55 +109,45 @@
 
         <Button
             android:id="@+id/readMoreButton"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/blue"
             android:text="Read more"
             app:cornerRadius="9dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/post"
+            app:layout_constraintEnd_toStartOf="@+id/editButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post"
             app:layout_constraintVertical_bias="0.3" />
 
-        <TextView
-            android:id="@+id/likeCount"
+        <Button
+            android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/montserrat_semibold"
-            android:text="20"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:backgroundTint="@color/red"
+            android:text="Delete"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/readMoreButton"
-            app:layout_constraintTop_toBottomOf="@+id/post" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/editButton"
+            app:layout_constraintTop_toTopOf="@+id/editButton" />
 
-        <ImageButton
-            android:id="@+id/likeButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="Like"
-            app:layout_constraintBottom_toBottomOf="@+id/likeCount"
-            app:layout_constraintStart_toEndOf="@+id/likeCount"
-            app:layout_constraintTop_toTopOf="@+id/likeCount"
-            app:srcCompat="@drawable/black_heart"
-            />
-        <ImageButton
-            android:id="@+id/postSaveButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="Save"
-            app:layout_constraintBottom_toBottomOf="@+id/likeButton"
-            app:layout_constraintStart_toEndOf="@+id/likeButton"
-            app:layout_constraintTop_toTopOf="@+id/likeButton"
-            app:srcCompat="@drawable/red_saved_articles" />
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="Edit"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/readMoreButton"
+            app:layout_constraintTop_toTopOf="@+id/readMoreButton" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier"

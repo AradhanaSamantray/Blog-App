@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener
 
 class ProfileActivity : AppCompatActivity() {
 
-    private lateinit var binding = ActivityProfileBinding by lazy {
+    private val binding: ActivityProfileBinding by lazy {
         ActivityProfileBinding.inflate(layoutInflater)
     }
     private lateinit var databaseReference: DatabaseReference
@@ -38,7 +38,7 @@ class ProfileActivity : AppCompatActivity() {
 
         //To go add article page
         binding.addNewBlogButton.setOnClickListener {
-            startActivity(Intent(this, SavedArticlesActivity::class.java))
+            startActivity(Intent(this, AddArticleActivity::class.java))
         }
         //To go Your Article Activity
         binding.articlesButton.setOnClickListener {
@@ -46,7 +46,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         //To Logout
-        binding.logoutButton.setOnClickListener {
+        binding.logOutButton.setOnClickListener {
             auth.signOut()
             startActivity(Intent(this, WelcomeActivity::class.java))
             finish()
@@ -85,7 +85,7 @@ class ProfileActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val userName = snapshot.getValue(String::class.java)
                 if (userName != null){
-                    binding.userName.text = userName
+                    binding.UserName.text = userName
                 }
             }
 

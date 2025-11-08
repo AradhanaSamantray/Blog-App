@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BlogApp">
         <activity
+            android:name=".EditBlogActivity"
+            android:exported="false" />
+        <activity
             android:name=".ArticleActivity"
             android:exported="false" />
         <activity
